@@ -53,11 +53,11 @@ Uma postagem é criada.
 
 | Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
-| Título                       | Alphanumérico| Sim         | S             |                                                                        |
-| Descrição                    | Alphanumérico| Sim         | S             |                                                                        |
-| Turma                        | Seleção única| Sim         | S             | Exibe as turmas vinculadas aos vínculos do usuário.                    |
-| Tags                         | Autocomplete | Não         | S             | Exibe as tags já existentes no sistema, caso não exista um correspondente cadastra uma nova.|
-| Anexos                       | Arquivo      | Sim         | S             | Abre a activity nativa de adicionar arquivos.                                 |
+| Título                       | Alphanumérico| Sim         | E             |                                                                        |
+| Descrição                    | Alphanumérico| Sim         | E             |                                                                        |
+| Turma                        | Seleção única| Sim         | E             | Exibe as turmas vinculadas aos vínculos do usuário.                    |
+| Tags                         | Autocomplete | Não         | E             | Exibe as tags já existentes no sistema, caso não exista um correspondente cadastra uma nova.|
+| Anexos                       | Arquivo      | Sim         | E             | Abre a activity nativa de adicionar arquivos.                                 |
 
 ## 6. Requisitos Legais
 Não se aplica.

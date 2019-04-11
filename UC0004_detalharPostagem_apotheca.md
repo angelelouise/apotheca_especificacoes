@@ -32,7 +32,7 @@ Não se aplica.
 
 1. O usuário aciona a opção de votar na postagem;
 1. Soma o contador de votos;
-1. Aciona a funcionalidade UC00XX_ranking_apotheca;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
 1. Envia uma notificação para o criador da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 
@@ -41,7 +41,7 @@ Não se aplica.
 
 1. O usuário aciona a opção de negativar a postagem;
 1. Soma o contador de votos negativos;
-1. Aciona a funcionalidade UC00XX_ranking_apotheca;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
 1. Envia uma notificação para o criador da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 
