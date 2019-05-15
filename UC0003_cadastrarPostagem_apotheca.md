@@ -18,8 +18,8 @@ Uma postagem é criada.
 1. O usuário preenche as informações necessárias e aciona a opção de cadastrar;**[[FE01](#fe01)]**
 1. Persiste as informações no banco local;
 1. Verifica se há conexão com a internet; **[[FA02](#fa02)]**
-1. Envia as informações para a API da apotheca, caso tenha conexão;
-1. Aciona a funcionalidade UC00XX_ranking_apotheca;
+1. Envia as informações para a base de dados, caso tenha conexão;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
 1. O caso de uso é finalizado.
 
 ### 4.2 Fluxo Alternativo
@@ -29,13 +29,14 @@ Uma postagem é criada.
 
 1. Apresenta o formulário com as informações da postagem que foram previamente cadastradas;
 1. O usuário edita as informações que deseja e aciona a opção de atualizar;
-1. Atualiza as informações modificadas;
+1. Atualiza as informações modificadas no banco local;
+1. Envia as informações para a base de dados;
 1. Retorna para o passo 5 do fluxo principal.
 
 #### FA02
 **Sincronizar postagem**
 
-1. Caso não haja conexão com a internet, guarda a informação para ser sincronizada de forma assíncrona;
+1. Caso não haja conexão com a internet, guarda a informação para ser sincronizada posteriormente;
 1. Retorna para o passo 6 do fluxo principal.
 
 ### 4.3 Fluxo de Exceções
@@ -54,6 +55,7 @@ Uma postagem é criada.
 | Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
 | Título                       | Alphanumérico| Sim         | E             |                                                                        |
+| Tipo                         | Seleção Única| Sim         | E             | Opções: Dúvida e Livre.                                                |
 | Descrição                    | Alphanumérico| Sim         | E             |                                                                        |
 | Turma                        | Seleção única| Sim         | E             | Exibe as turmas vinculadas aos vínculos do usuário.                    |
 | Tags                         | Autocomplete | Não         | E             | Exibe as tags já existentes no sistema, caso não exista um correspondente cadastra uma nova.|

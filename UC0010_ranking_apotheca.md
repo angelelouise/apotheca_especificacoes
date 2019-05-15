@@ -24,14 +24,21 @@ Não se apica.
 #### FA01
 **Voto**
 
-1. O usuário vota em uma postagem;
+1. O usuário vota em uma postagem ou comentário;
 1. Adiciona 10 pontos ao ranking do autor da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 
 #### FA02
 **Negativação**
 
-1. O usuário negativa uma postagem;
+1. O usuário negativa uma postagem ou comentário;
+1. Diminui 10 pontos do ranking do autor da postagem;
+1. Retorna para o passo 4 do fluxo principal.
+
+#### FA02
+**Reporte**
+
+1. O usuário reporta uma postagem;
 1. Diminui 10 pontos do ranking do autor da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 

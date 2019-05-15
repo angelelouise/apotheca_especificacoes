@@ -60,7 +60,7 @@ Não se aplica.
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
 | Foto do perfil               | Imagem       | Sim         | S             |                                                          |
 | Usuário                      | Alphanumérico| Sim         | S             |                                                                        |
-| Ação                         | Alphanumérico| Sim         | S             | Apresenta as opções: "[usuário] [Curtiu/Comentou/Negativou] sua postagem", "Seu ranking subiu para [ranking]", "Sua postagem foi reportada, dessa forma, ela foi ocultada do fórum."                                                                        |
+| Ação                         | Alphanumérico| Sim         | S             | Apresenta as opções: "[usuário] [Curtiu/Comentou/Negativou] sua postagem", "[usuário] [Curtiu/Negativou] seu comentário", "Seu ranking subiu para [ranking]", "Sua postagem foi reportada, dessa forma, ela foi ocultada do fórum."                                                                        |
 | Timeframe                    | Alphanumérico| Sim         | S             | Diferença entre a data do cadastro da postagem em relação a data atual.|
 
 ## 6. Requisitos Legais

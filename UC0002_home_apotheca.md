@@ -16,8 +16,7 @@ Não se apica.
 
 1. O usuário aciona a funcionalidade de home;
 1. Consulta todas as postagens de todas as turmas de todos os vínculos de graduação do aluno; **[[FA01](#fa01)]**
-1. Exibe o perfil do usuário; **[[BD01](#bd01)]**
-1. Exibe as postagens ordenadas por turma com um limite máximo de 10 por consulta; **[[BD02](#bd02)]**, **[[FA02](#fa02)]**, **[[FA03](#fa03)]**, **[[FA04](#fa04)]**, **[[FA05](#fa05)]**
+1. Exibe as postagens ordenadas por turma com um limite máximo de 10 por consulta; **[[BD01](#bd01)]**, **[[FA02](#fa02)]**, **[[FA03](#fa03)]**, **[[FA04](#fa04)]**, **[[FA05](#fa05)]**
 1. O caso de uso é encerrado.
 
 ### 4.2 Fluxo Alternativo
@@ -25,7 +24,7 @@ Não se apica.
 #### FA01
 **Sem nenhuma postagem**
 
-1. Caso a consulta não retorne nenhum objeto, exibe a tela **[[BD04](#bd04)]**;
+1. Caso a consulta não retorne nenhum objeto, exibe a tela **[[BD03](#bd03)]**;
 1. Retorna para o passo 3 do fluxo principal.
 
 #### FA02
@@ -46,7 +45,7 @@ Não se apica.
 **Editar postagem**
 
 1. O usuário aciona o menu de opções em uma das postagens da lista;
-1. Exibe as opções de ações para a postagem indicada; **[[BD03](#bd03)]**, **[[RN01](#rn01)]**
+1. Exibe as opções de ações para a postagem indicada; **[[BD02](#bd02)]**, **[[RN01](#rn01)]**
 1. O usuário aciona a opção de editar postagem;
 1. Redireciona para o **[[FA01](#fa01)]** da funcionalidade UC003_criarPostagem_apotheca;
 1. Retorna para o passo 5 do fluxo principal.
@@ -55,7 +54,7 @@ Não se apica.
 **Excluir postagem**
 
 1. O usuário aciona o menu de opções em uma das postagens da lista;
-1. Exibe as opções de ações para a postagem indicada; **[[BD03](#bd03)]**, **[[RN01](#rn01)]**
+1. Exibe as opções de ações para a postagem indicada; **[[BD02](#bd02)]**, **[[RN01](#rn01)]**
 1. O usuário aciona a opção de excluir postagem;
 1. Remove a postagem da base de dados;
 1. Retorna para o passo 5 do fluxo principal.
@@ -65,15 +64,8 @@ Não se apica.
 Não se aplica.
 
 ## 5.Bloco de dados
+
 ### BD01
-**Perfil**
-
-| Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
-|------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
-| Foto do perfil               | Imagem       | Sim         | S             |                                                                  |
-| Nome do usuário              | Alphanuméric | Sim         | S             |                                                                    |
-
-### BD02
 **Lista de postagem**
 
 | Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |

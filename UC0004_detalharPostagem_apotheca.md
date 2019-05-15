@@ -52,6 +52,7 @@ Não se aplica.
 1. Exibe o formulário para descrição do motivo do reporte; **[[BD03](#bd03)]**
 1. O usuário preenche as informações necessárias e aciona a opção de enviar;
 1. Inativa a postagem;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
 1. Envia uma notificação para o criador da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 
@@ -73,6 +74,32 @@ Não se aplica.
 **Compartilhar postagem**
 1. O usuário aciona a opção de compartilhar a postagem;
 1. Aciona a funcionalidade UC00XX_compartilharPost_apotheca;
+1. Retorna para o passo 4 do fluxo principal.
+
+#### FA08
+**Escolher comentário como resposta**
+
+1. O usuário aciona a opção de escolher como resposta;
+1. Atualiza o comentário como resposta na base de dados;
+1. Muda a posição do comentário para o primeiro da lista;
+1. Retorna para o passo 4 do fluxo principal.
+
+#### FA09
+**Votar comentário**
+
+1. O usuário aciona a opção de votar no comentário;
+1. Soma o contador de votos;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
+1. Envia uma notificação para o criador do comentário;
+1. Retorna para o passo 4 do fluxo principal.
+
+#### FA10
+**Negativar comentário**
+
+1. O usuário aciona a opção de negativar o comentário;
+1. Soma o contador de votos negativos;
+1. Aciona a funcionalidade UC0010_ranking_apotheca;
+1. Envia uma notificação para o criador do comentário;
 1. Retorna para o passo 4 do fluxo principal.
 
 ### 4.3 Fluxo de Exceções
@@ -104,7 +131,9 @@ Não se aplica.
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
 | Foto do perfil               | Imagem       | Sim         | S             |                                                          |
 | Adicione um comentário       | Alphanumérico| Não         | E             | Não deve ser exibido para o usuário que cadastrou a postagem.          |
-| Descrição do comentário      | Alphanumérico| Sim         | S             |                                                                        |
+| Escolher como resposta       | Imagem       | Sim         | E             | **[[FA08](#fa08)]**, só deve ser exibido para o usuário que cadastrou a postagem, caso o tipo da postagem seja "Pergunta".                                                   |
+| Votar                        | Imagem       | Sim         | E             | **[[FA09](#fa09)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
+| Negativar                    | Imagem       | Sim         | E             | **[[FA10](#fa10)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
 
 ### BD03
 **Formulário de reporte**

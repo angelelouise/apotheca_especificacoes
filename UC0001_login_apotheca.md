@@ -16,19 +16,21 @@ Uma conta na apotheca é criada para o discente.
 
 1. O usuário acessa a funcionalidade de login;
 1. Exibe os campos **[[BD01](#bd01)]**;
-1. O usuário preenche os dados e aciona a opção de logar;
-1. Verifica se já possui conta na base de dados; **[[FE02](#fe02)]**
-1. Caso o login indicado não esteja na base de dados, faz a autenticação com a API da UFRN;  **[[FA01](#fa01)]**
- **[[FE01](#fe01)]**
-1. Cria uma conta para o usuário na API da apotheca;
+1. O usuário preenche os dados e aciona a opção de autenticar;
+1. Exibe a página de autenticação com a API da UFRN;
+1. O usuário preenche as informações de login e senha da UFRN e autoriza o uso dos dados pela aplicação; **[[FE01](#fe01)]**
+1. Consulta os dados do usuário na API da UFRN;
+1. Verifica se esses dados já estão na base de dados;
+1. Caso os dados não estejam na base de dados, adiciona o registro do usuário;  **[[FA01](#fa01)]**
 1. O caso de uso é encerrado.
 
 ### 4.2 Fluxo Alternativo
 #### FA01
 **Login com usuário já existente**
 
-1. Caso possua conta na base de dados, faz o login na conta;
-1. Retorna para o passo 7 do fluxo principal.
+1. Caso os dados estejam na base de dados, verifica se não há alterações nas informações do usuário;
+1. Caso haja alterações, atualiza as informações;
+1. Retorna para o passo 9 do fluxo principal.
 
 ### 4.3 Fluxo de Exceções
 
@@ -38,12 +40,6 @@ Uma conta na apotheca é criada para o discente.
  1. Caso a autenticação com API da SINFO falhe, exibe uma mensagem de erro;
  1. O caso de uso é encerrado.
 
-#### FE02
-**Senha não compatíveis com a do SIGAA**
-
-1. Caso o usuário esteja na base de dados, verifica se a senha indicada corresponde à do banco.
-1. Caso não sejam iguais, exibe uma mensagem de erro;
-1. O caso de uso é encerrado.
 
 ## 5.Bloco de dados
 ### BD01
@@ -51,8 +47,9 @@ Uma conta na apotheca é criada para o discente.
 
 | Campo                        | Tipo   | Obrigatório | Entrada/Saída | Observações                                                            |
 |------------------------------|--------|-------------|---------------|------------------------------------------------------------------------|
-| Usuário                      | Alphanumérico    | Sim         | E         | Usuário do SIGAA.                                                     |
-| Senha                        | Alphanumérico    | Sim         | E         | Senha do SIGAA.                                                                   |
+| CPF                          | Alphanumérico | Sim         | E         | Usuário do SIGAA.                                                     |
+| Autenticar                   | Button | Sim         | E         |                                                    |
+
 ## 6. Requisitos Legais
 Não se aplica.
 
