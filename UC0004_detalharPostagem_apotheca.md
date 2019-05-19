@@ -15,16 +15,20 @@ Não se aplica.
 **Detalhar postagem**
 
 1. O usuário aciona a funcionalidade de detalhar postagem;
-1. Exibe os detalhes da postagem selecionada;  **[[BD01](#bd01)]**, **[[FA02](#fa02)]**, **[[FA03](#fa03)]**, **[[FA04](#fa04)]**, **[[FA05](#fa05)]**, **[[FA06](#fa06)]**, **[[FA07](#fa07)]**
-1. Exibe a listagem de comentários; **[[BD02](#bd02)]**, **[[FA01](#fa01)]**
+1. Exibe os detalhes da postagem selecionada;  **[[BD01](#bd01)]**, **[[FA02](#fa02)]**, **[[FA03](#fa03)]**, **[[FA04](#fa04)]**, **[[FA05](#fa05)]**, **[[FA06](#fa06)]**, **[[FA07](#fa07)]**, **[[FA11](#fa11)]**
+1. Exibe a listagem de comentários; **[[BD02](#bd02)]**, **[[FA01](#fa01)]**, **[[FA09](#fa09)]**, **[[FA10](#fa10)]**
+1. Exibe a listagem de respostas; **[[RN01](#RN01)]**, **[[FA01](#fa01)]**, **[[FA08](#fa08)]**, **[[FA09](#fa09)]**, **[[FA10](#fa10)]**
 1. O caso de uso é finalizado;
 ### 4.2 Fluxo Alternativo
 
 #### FA01
-**Comentar postagem**
+**Comentar postagem/resposta**
 
+1. O usuário aciona opção de escrever comentário;
+1. Exibe o campo para escrever comentário; **[[BD02](#bd02)]**
 1. O usuário escreve um comentário e aciona a opção de enviar;
 1. Persiste o comentário vinculado à postagem;
+1. Envia uma notificação para o criador da postagem;
 1. Retorna para o passo 4 do fluxo principal.
 
 #### FA02
@@ -77,7 +81,7 @@ Não se aplica.
 1. Retorna para o passo 4 do fluxo principal.
 
 #### FA08
-**Escolher comentário como resposta**
+**Escolher resposta**
 
 1. O usuário aciona a opção de escolher como resposta;
 1. Atualiza o comentário como resposta na base de dados;
@@ -102,13 +106,23 @@ Não se aplica.
 1. Envia uma notificação para o criador do comentário;
 1. Retorna para o passo 4 do fluxo principal.
 
+#### FA11
+**Responder postagem**
+
+1. O usuário aciona opção de responder a postagem;
+1. Exibe o campo para escrever resposta; **[[BD04](#bd04)]**
+1. O usuário escreve a resposta e aciona a opção de enviar;
+1. Persiste a resposta vinculada à postagem;
+1. Envia uma notificação para o criador da postagem;
+1. Retorna para o passo 4 do fluxo principal.
+
 ### 4.3 Fluxo de Exceções
 
 Não se aplica.
 
 ## 5.Bloco de dados
 ### BD01
-**Postagem**
+**Postagem/Pergunta**
 
 | Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
@@ -123,6 +137,8 @@ Não se aplica.
 | Reportar                     | Imagem       | Sim         | E             | **[[FA04](#fa04)]**, não deve ser exibido para o usuário que cadastrou a postagem.                                                   |
 | Editar                       | Imagem       | Não         | E             | **[[FA05](#fa05)]**, só deve ser exibido para o usuário que cadastrou a postagem.                                                    |
 | Excluir                      | Imagem       | Não         | E             | **[[FA06](#fa06)]**, só deve ser exibido para o usuário que cadastrou a postagem.                                                    |
+| Adicione um comentário       | Buttom| Não         | E             | Não deve ser exibido para o usuário que cadastrou a postagem.          |
+| Adicione uma resposta        | Buttom| Não         | E             | Só deve ser exibido se o tipo da postagem for "Perguntas e Respostas", não deve ser exibido para o usuário que cadastrou a postagem.          |
 
 ### BD02
 **Comentários**
@@ -130,8 +146,7 @@ Não se aplica.
 | Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
 | Foto do perfil               | Imagem       | Sim         | S             |                                                          |
-| Adicione um comentário       | Alphanumérico| Não         | E             | Não deve ser exibido para o usuário que cadastrou a postagem.          |
-| Escolher como resposta       | Imagem       | Sim         | E             | **[[FA08](#fa08)]**, só deve ser exibido para o usuário que cadastrou a postagem, caso o tipo da postagem seja "Pergunta".                                                   |
+| Descrição                    | Alphanumérico| Sim         | E/S           |                                                          |
 | Votar                        | Imagem       | Sim         | E             | **[[FA09](#fa09)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
 | Negativar                    | Imagem       | Sim         | E             | **[[FA10](#fa10)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
 
@@ -142,11 +157,26 @@ Não se aplica.
 |------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
 | Motivo para o reporte        | Alphanumérico| Sim         | E             |                                                                        |
 
+### BD04
+**Respostas**
+
+| Campo                        | Tipo         | Obrigatório | Entrada/Saída | Observações                                                            |
+|------------------------------|--------------|-------------|---------------|------------------------------------------------------------------------|
+| Foto do perfil               | Imagem       | Sim         | S             |                                                          |
+| Descrição                    | Alphanumérico| Sim         | E/S           |                                                          |
+| Escolher como resposta       | Imagem       | Sim         | E             | **[[FA08](#fa08)]**, só deve ser exibido para o usuário que cadastrou a postagem, caso o tipo da postagem seja "Pergunta".                                                   |
+| Adicione um comentário       | Buttom| Não         | E             | Não deve ser exibido para o usuário que cadastrou a postagem.          |
+| Votar                        | Imagem       | Sim         | E             | **[[FA09](#fa09)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
+| Negativar                    | Imagem       | Sim         | E             | **[[FA10](#fa10)]**, não deve ser exibido para o usuário que cadastrou o comentário.                                                    |
+
 ## 6. Requisitos Legais
 Não se aplica.
 
 ## 7. Regras de Negócio
-Não se aplica.
+
+#### RN01
+- Só deve ser exibido a listagem de respostas se o tipo da postagem for de "Perguntas e Respostas";
+
 
 ## 8. Documentos Relacionados
 Não se aplica.

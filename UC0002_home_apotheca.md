@@ -54,7 +54,7 @@ Não se apica.
 **Excluir postagem**
 
 1. O usuário aciona o menu de opções em uma das postagens da lista;
-1. Exibe as opções de ações para a postagem indicada; **[[BD02](#bd02)]**, **[[RN01](#rn01)]**
+1. Exibe as opções de ações para a postagem indicada; **[[BD02](#bd02)]**, **[[RN01](#RN01)]**
 1. O usuário aciona a opção de excluir postagem;
 1. Remove a postagem da base de dados;
 1. Retorna para o passo 5 do fluxo principal.
